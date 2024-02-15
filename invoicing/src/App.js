@@ -5,12 +5,13 @@ import InvoiceForm from "./components/InvoiceForm/InvoiceForm";
 import InvoiceItems from "./components/InvoiceItems/InvoiceItems";
 import ItemForm from "./components/ItemForm/ItemForm";
 import Login from './components/LoginPage/Login';
+import Signup from './components/Signup/Signup';
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path='' element={<InvoiceList />}>
+          <Route path='invoices' element={<InvoiceList />}>
           </Route>
           <Route path='newInvoice' element={<InvoiceForm />}>
           </Route>
@@ -19,6 +20,8 @@ function App() {
           <Route path='/:id/newItem' element={<ItemForm />}>
           </Route>
           <Route path='/login' element={<Login />}>
+          </Route>
+          <Route path='/signup' element={<Signup />}>
           </Route>
         </Routes>
       </BrowserRouter>

@@ -8,12 +8,14 @@ export default function InvoiceForm() {
   const navigate = useNavigate()
 
   function handleSubmit() {
+    const token = localStorage.getItem("access_token");
     newInvoice.items = []
     fetch('http://127.0.0.1:8000/api/invoices/new', {
       method: 'POST',
       body: JSON.stringify(newInvoice),
       headers: {
         'Content-Type': 'application/json',
+        Authorization: 'Bearer ${token}',
       },
     }).then((res) => navigate('/'))
   }
